@@ -1,30 +1,36 @@
 import React from 'react';
-import Logo from './logo.png'
+import Logo from './logo.png';
+import './style.css';
 
 function App() {
   return (
     <div>
-      <div><img src={Logo} alt="spotify" width="80px" />SPOTIFY</div>
-      <nav>
+      <div className="header">
+        <img src={Logo} alt="spotify" width="68px" />
+        <span className="title">Spotify</span>
+      </div>
+      <nav className="menu">
         <ul>
           <li><a href="#">SIGN IN</a></li>
           <li><a href="#">SIGN UP</a></li>
         </ul>
       </nav> 
       <form>
-        <div>
-          <input type="text" name="username" placeholder="Username" />
+        <div className="row">
+          <input className="input" type="text" name="username" placeholder="Username" required />
         </div>
-        <div>
-          <input type="password" name="password" placeholder="Password" />
+        <div className="row">
+          <input className="input"type="password" name="password" placeholder="Password" required />
         </div>
-        <div>
-          <input type="checkbox" name="signed" />
+        <div className="stay">
+          <input type="checkbox" name="signed" id="signed" /> <label htmlFor="signed">stay signed in</label>
         </div>
-        <div>
-          <button type="submit">SIGN IN</button>
+        <div className="row">
+          <button className="button" type="submit">SIGN IN</button>
         </div>
-        <a href="#">Forgot Password?</a>
+        <div className="forgot">
+          <a href="#">Forgot Password?</a>
+        </div>
       </form>
     </div>
   );
